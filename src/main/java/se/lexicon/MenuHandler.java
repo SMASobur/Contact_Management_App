@@ -20,13 +20,19 @@ class MenuHandler {
 
     public int getUserChoice() {
         while (true) {
+            String input = scanner.nextLine();
+            if (input.trim().isEmpty()) {
+                System.out.print("Input cannot be empty. Please enter a number: ");
+                continue;
+            }
             try {
-                return Integer.parseInt(scanner.nextLine());
+                return Integer.parseInt(input);
             } catch (NumberFormatException e) {
                 System.out.print("Invalid input. Please enter a number: ");
             }
         }
     }
+
 
 
 

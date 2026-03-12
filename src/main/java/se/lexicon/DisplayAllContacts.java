@@ -7,6 +7,7 @@ public class DisplayAllContacts {
 
     public void run() {
         displayMenu();
+
     }
 
     private static void displayMenu() {

@@ -7,15 +7,11 @@ public class AddContact {
 
     public void run() {
         displayMenu();
-        getUserChoice();
+
+        int contact = GetUserChoice.getInt(scanner,"");
     }
 
-    private static void displayMenu() {
+    private void displayMenu() {
         System.out.println("\n**** Add new contact ****");
     }
-    private int getUserChoice() {
-        return Integer.parseInt(scanner.nextLine());
-    }
-
-
 }

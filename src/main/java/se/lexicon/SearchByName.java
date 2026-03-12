@@ -7,14 +7,11 @@ public class SearchByName {
 
     public void run() {
         displayMenu();
-        getUserChoice();
+        int contact = GetUserChoice.getInt(scanner,"");
     }
 
     private static void displayMenu() {
         System.out.println("\n**** Search by Name ****");
-    }
-    private int getUserChoice() {
-        return Integer.parseInt(scanner.nextLine());
     }
 
 
