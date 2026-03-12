@@ -20,8 +20,8 @@ public class DisplayAllContacts {
             System.out.println("Contact List:");
             System.out.println("----------------------");
 
-            for (String contact : contacts) {
-                System.out.println(contact);
+            for (int i=0; i<contacts.size(); i++){
+                System.out.println((i+1) + ". " + contacts.get(i) );
             }
 
             System.out.println("----------------------");
