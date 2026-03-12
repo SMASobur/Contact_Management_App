@@ -20,7 +20,7 @@ public class AddContact {
         System.out.print("Enter Mobile Number: ");
         String mobile = scanner.nextLine().trim();
 
-        String combineContact = name + "|" +mobile;
+        String combineContact = name + " (" +mobile+")";
 
         if (contactList.contains(combineContact)){
             System.out.println("Error: This contact already exists.");
@@ -36,4 +36,9 @@ public class AddContact {
     private void displayMenu() {
         System.out.println("\n**** Add a new contact ****");
     }
+
+    public static List<String> getContacts() {
+        return contactList;
+    }
+
 }
