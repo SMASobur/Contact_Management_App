@@ -17,7 +17,7 @@ public class AddContact {
         System.out.print("Enter Name: ");
         String name = scanner.nextLine().trim();
 
-        System.out.print("Enter Mobile Number: ");
+        System.out.print("Enter Mobile: ");
         String mobile = scanner.nextLine().trim();
 
         String combineContact = name + " (" +mobile + ")";
@@ -28,7 +28,7 @@ public class AddContact {
             System.out.println("Error: Name or Mobile can not be empty.");
         } else {
            contactList.add(combineContact);
-            System.out.println("Contact successfully added: " + combineContact);
+            System.out.println("Contact added successfully: " + combineContact);
         }
 
     }

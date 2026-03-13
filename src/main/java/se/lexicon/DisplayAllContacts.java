@@ -1,18 +1,24 @@
 package se.lexicon;
 
+import java.util.Collections;
 import java.util.List;
 
 public class DisplayAllContacts {
 
     public void run() {
-        displayMenu();
+
+        List<String> contacts = AddContact.getContacts();
+
+        //To Sort alphabetically (A-Z)
+        Collections.sort(contacts);
+
+        displayMenu(contacts);
 
 
     }
 
-    private void displayMenu() {
+    private void displayMenu(List<String> contacts) {
         System.out.println("\n**** Display all contacts ****");
-        List<String> contacts = AddContact.getContacts();
 
         if (contacts.isEmpty()) {
             System.out.println("No contacts found. Your list is empty.");
