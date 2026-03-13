@@ -18,7 +18,12 @@ class MenuHandler {
         System.out.print("Choose an option: ");
     }
 
-    public int getUserChoice() {
+    public void pressEnterToContinue() {
+        System.out.print("Press Enter to continue...");
+        scanner.nextLine();
+    }
+
+   /* public int getUserChoice() {
         while (true) {
             String input = scanner.nextLine();
             if (input.trim().isEmpty()) {
@@ -31,7 +36,7 @@ class MenuHandler {
                 System.out.print("Invalid input. Please enter a number: ");
             }
         }
-    }
+    }*/
 
 
 

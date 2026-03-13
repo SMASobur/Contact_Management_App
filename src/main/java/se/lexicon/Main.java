@@ -19,7 +19,7 @@ public class Main {
         do {
             menuHandler.displayMainMenu();
 
-            choice = menuHandler.getUserChoice();
+            choice = GetUserChoice.getInt(scanner, "");
 
             switch (choice){
                 case 1:
@@ -34,6 +34,12 @@ public class Main {
                 case 0:
                     System.out.println(".....Goodbye!.....");
                     break;
+                default:
+                    System.out.println("Invalid option. Please choose 1-3 or 0->Exit");
+            }
+            if (choice != 0) {
+                System.out.println();
+                menuHandler.pressEnterToContinue();
             }
 
         } while (choice!=0);
