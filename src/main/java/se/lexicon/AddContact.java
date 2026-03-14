@@ -15,8 +15,8 @@ public class AddContact {
 
             addProcess();
 
-            System.out.println("\n1. Add another contact.");
-            System.out.println("0. Return to Main Menu.");
+            System.out.println("\n1. + Add another contact.");
+            System.out.println("0. ↩ Return to Main Menu.");
 
             int choice = GetUserChoice.getInt(scanner, "Choice: ");
             if (choice == 0) {
@@ -32,7 +32,7 @@ public class AddContact {
         System.out.print("Enter Name: ");
         String name = scanner.nextLine().trim();
 
-        int mobile = GetUserChoice.getInt(scanner, "Enter Mobile: ");
+        int mobile = GetUserChoice.getInt(scanner, " \uD83D\uDCDE Enter Mobile: ");
 
         // Convert the int to a String for storage
         String combineContact = name + " (" + mobile + ")";

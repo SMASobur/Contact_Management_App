@@ -3,7 +3,7 @@ package se.lexicon;
 import java.util.List;
 import java.util.Scanner;
 
-public class SearchByName {
+public class SearchBy {
     private static Scanner scanner = new Scanner(System.in);
 
     public void run() {
@@ -20,9 +20,9 @@ public class SearchByName {
     private static void displayMenu(List<String> contacts) {
         while (true) {
             System.out.println("\n**** Search Contacts ****");
-            System.out.println("1. Search by Name");
-            System.out.println("2. Search by Mobile Number");
-            System.out.println("0. Exit to Main Menu");
+            System.out.println("1. #\uFE0F⃣ Search by Name");
+            System.out.println("2. \uD83D\uDD22 Search by Mobile Number");
+            System.out.println("0. ↩ Return to Main Menu");
 
             int searchType;
             // Inner loop specifically for valid choice input

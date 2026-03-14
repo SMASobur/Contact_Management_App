@@ -7,7 +7,7 @@ public class Main {
 
     private static MenuHandler menuHandler = new MenuHandler(scanner);
     private static AddContact addContact=new AddContact();
-    private static SearchByName searchByName=new SearchByName();
+    private static SearchBy searchBy =new SearchBy();
     private static DisplayAllContacts displayAllContacts = new DisplayAllContacts();
 
 
@@ -26,13 +26,13 @@ public class Main {
                     addContact.run();
                     break;
                 case 2:
-                    searchByName.run();
+                    searchBy.run();
                     break;
                 case 3:
                     displayAllContacts.run();
                     break;
                 case 0:
-                    System.out.println(".....Goodbye!.....");
+                    System.out.println("...*ੈ✩༺Goodbye༻*ੈ✩...");
                     break;
                 default:
                     System.out.println("Invalid option. Please choose 1-3 or 0->Exit");
