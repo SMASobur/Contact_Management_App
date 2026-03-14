@@ -12,7 +12,7 @@ public class DisplayAllContacts {
         List<String> contacts = AddContact.getContacts();
 
         if (contacts.isEmpty()) {
-            System.out.println("\n**** Display all contacts ****");
+            System.out.println("\n**** All Contacts ****");
             System.out.println("No contacts found. Your list is empty.");
             return;
         }
@@ -57,16 +57,12 @@ public class DisplayAllContacts {
 
     private void displayMenu(List<String> contacts) {
         System.out.println("\n**** All Contacts (Alphabetical) ****");
-
-        if (contacts.isEmpty()) {
-            System.out.println("No contacts found. Your list is empty.");;
-        } else {
-            System.out.println("------------------------------------");
+            System .out.println("------------------------------------");
             for (int i = 0; i < contacts.size(); i++) {
                 System.out.println((i + 1) + ". " + contacts.get(i));
             }
             System.out.println("------------------------------------");
             System.out.println("Total contacts: " + contacts.size());
-        }
+
     }
 }

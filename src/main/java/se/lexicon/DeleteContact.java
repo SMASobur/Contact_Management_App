@@ -42,12 +42,11 @@ public class DeleteContact {
                 if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
                     contacts.remove(foundContact);
                     System.out.println("Contact deleted successfully.");
-                    break; // Exit after successful deletion
+                    break;
                 } else {
                     System.out.println("Deletion cancelled. Try again.");
                 }
             } else {
-                // If not found, the loop repeats and asks again
                 System.out.println("No exact word match found for: " + term);
                 System.out.println("Please try again or enter 0 to exit.");
             }
