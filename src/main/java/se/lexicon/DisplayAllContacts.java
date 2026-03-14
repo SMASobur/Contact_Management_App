@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DisplayAllContacts {
-    private static DeleteContact deleteContact = new DeleteContact();
     private Scanner scanner = new Scanner(System.in);
 
     public void run() {
@@ -19,37 +18,25 @@ public class DisplayAllContacts {
 
 
         Collections.sort(contacts);
-        boolean showing = true;
 
-        while (showing) {
+        while (true) {
             displayMenu(contacts);
 
-            System.out.println("\nOptions:");
-            System.out.println("Type 'd' to delete a contact");
-            System.out.println("Type '0' to return to Main Menu");
+
 
             String input = "";
             while (true) {
-                System.out.print("Choice: ");
+                System.out.print("\n0. ↩ Return to Main Menu: ");
                 input = scanner.nextLine().trim().toLowerCase();
 
-                if (input.equals("d") || input.equals("0")) {
+                if (input.equals("0")) {
                     break;
                 }
-                System.out.println("Invalid choice. Please type 'd' or '0'.");
+                System.out.println("Invalid input! Please enter [0] ↩ Return to Main Menu");
             }
 
             if (input.equals("0")) {
-                showing = false;
-            } else if (input.equals("d")) {
-                deleteContact.run();
-
-                if (contacts.isEmpty()) {
-                    System.out.println("No contacts left. Returning to Main Menu.");
-                    showing = false;
-                } else {
-                    Collections.sort(contacts);
-                }
+                return;
             }
         }
     }
