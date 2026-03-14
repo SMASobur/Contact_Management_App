@@ -15,12 +15,19 @@ public class AddContact {
 
             addProcess();
 
-            System.out.println("\n1. + Add another contact.");
+            System.out.println("\n1. + Add another new contact.");
             System.out.println("0. ↩ Return to Main Menu.");
 
-            int choice = GetUserChoice.getInt(scanner, "Choice: ");
+            int choice;
+
+            while (true){
+
+                choice = GetUserChoice.getInt(scanner, "Choice: ");
+                if (choice == 0 || choice == 1) break;
+                System.out.println("Invalid input! Please type [1] to add more or [0] to return.");
+            }
             if (choice == 0) {
-                System.out.println("Exiting.... Returning to Main Menu.");
+                System.out.println("Returning to Main Menu.");
                 continueAdding = false;
             }
         }
