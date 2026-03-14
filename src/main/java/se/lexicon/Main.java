@@ -39,7 +39,6 @@ public class Main {
             }
             if (choice != 0) {
                 System.out.println();
-                menuHandler.pressEnterToContinue();
             }
 
         } while (choice!=0);

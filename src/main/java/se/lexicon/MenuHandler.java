@@ -10,7 +10,7 @@ class MenuHandler {
     }
 
     public void displayMainMenu() {
-        System.out.println("\n=== Contact Management ===");
+        System.out.println("\n=== Main Menu ===");
         System.out.println("1. Add Contact");
         System.out.println("2. Search by Name");
         System.out.println("3. Display All Contacts");
@@ -23,20 +23,6 @@ class MenuHandler {
         scanner.nextLine();
     }
 
-   /* public int getUserChoice() {
-        while (true) {
-            String input = scanner.nextLine();
-            if (input.trim().isEmpty()) {
-                System.out.print("Input cannot be empty. Please enter a number: ");
-                continue;
-            }
-            try {
-                return Integer.parseInt(input);
-            } catch (NumberFormatException e) {
-                System.out.print("Invalid input. Please enter a number: ");
-            }
-        }
-    }*/
 
 
 
