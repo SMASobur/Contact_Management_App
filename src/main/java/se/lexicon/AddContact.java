@@ -12,36 +12,39 @@ public class AddContact {
         boolean continueAdding = true;
 
         while (continueAdding) {
-            displayMenu();
 
-            // Ask to continue or exit
-            System.out.println("\nPress 1 to add another contact, or 0 to return to Main Menu.");
+            addProcess();
+
+            System.out.println("\n1. Add another contact.");
+            System.out.println("0. Return to Main Menu.");
+
             int choice = GetUserChoice.getInt(scanner, "Choice: ");
             if (choice == 0) {
-                System.out.println("Exiting.... Return to Main Menu.");
+                System.out.println("Exiting.... Returning to Main Menu.");
                 continueAdding = false;
             }
         }
     }
 
-    private void displayMenu() {
+    private void addProcess() {
         System.out.println("\n**** Add a new contact ****");
+
         System.out.print("Enter Name: ");
         String name = scanner.nextLine().trim();
 
-        System.out.print("Enter Mobile: ");
-        String mobile = scanner.nextLine().trim();
+        int mobile = GetUserChoice.getInt(scanner, "Enter Mobile: ");
 
+        // Convert the int to a String for storage
         String combineContact = name + " (" + mobile + ")";
-        if (name.isEmpty() || mobile.isEmpty()) {
-            System.out.println("Error: Name and Mobile can not be empty.");
+
+        if (name.isEmpty()) {
+            System.out.println("Error: Name cannot be empty.");
         } else if (contactList.contains(combineContact)) {
             System.out.println("Error: This contact already exists.");
         } else {
             contactList.add(combineContact);
             System.out.println("Contact added successfully: " + combineContact);
         }
-
     }
 
     public static List<String> getContacts() {
