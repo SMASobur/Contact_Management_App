@@ -69,24 +69,14 @@ public class SearchBy {
                 continue;
             }
 
-            // --- NEW: Delete Process within Search ---
+            //  Delete Process within Search
             System.out.println("----------------------");
             System.out.println("Options: [d] Delete a result | [Enter] Search again");
             System.out.print("Choice: ");
             String action = scanner.nextLine().trim().toLowerCase();
 
             if (action.equals("d")) {
-                int deleteIdx = GetUserChoice.getInt(scanner, "Enter the serial number # to delete (0 to cancel): ");
-                if (deleteIdx > 0 && deleteIdx <= matches.size()) {
-                    String target = matches.get(deleteIdx - 1);
-                    System.out.print("Are you sure you want to delete ❌ '" + target + "'? (y/n): ");
-                    if (scanner.nextLine().trim().equalsIgnoreCase("y")) {
-                        contacts.remove(target); // Remove from the main static list
-                        System.out.println("Contact deleted successfully.");
-                    }
-                } else {
-                    System.out.println("Invalid selection. Deletion cancelled.");
-                }
+                DeleteHelper.processDeletion(contacts,matches);
             }
         }
     }
