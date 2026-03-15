@@ -9,6 +9,7 @@ public class Main {
     private static AddContact addContact=new AddContact();
     private static SearchBy searchBy =new SearchBy();
     private static DisplayAllContacts displayAllContacts = new DisplayAllContacts();
+    private static UpdateContact updateContact  =new UpdateContact();
 
 
     static void main() {
@@ -30,6 +31,9 @@ public class Main {
                     break;
                 case 3:
                     displayAllContacts.run();
+                    break;
+                case 4:
+                    updateContact.run();
                     break;
                 case 0:
                     System.out.println("...*ੈ✩༺Goodbye༻*ੈ✩...");
