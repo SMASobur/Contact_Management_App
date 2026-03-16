@@ -4,28 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Handles the logic for creating and storing new contacts.
+ * Uses a static list to ensure data persists during the application's lifecycle.
+ */
 public class AddContact {
     private Scanner scanner = new Scanner(System.in);
+
+    // Static list stores contacts in "Name (Mobile)" format across all instances
     private static List<String> contactList = new ArrayList<>();
+
 
     public void run() {
         boolean continueAdding = true;
 
         while (continueAdding) {
-
+            // Execute the actual data entry logic
             addProcess();
 
             System.out.println("\n1. + Add another new contact.");
             System.out.println("0. ↩ Return to Main Menu.");
 
             int choice;
-
-            while (true){
-
+            // Internal validation loop to force a correct choice of 1 or 0
+            while (true) {
                 choice = GetUserChoice.getInt(scanner, "Choice: ");
                 if (choice == 0 || choice == 1) break;
                 System.out.println("Invalid input! Please type [1] to add more or [0] to return.");
             }
+
             if (choice == 0) {
                 System.out.println("Returning to Main Menu.");
                 continueAdding = false;
@@ -39,11 +46,11 @@ public class AddContact {
         System.out.print("Enter Name: ");
         String name = scanner.nextLine().trim();
 
-        int mobile = GetUserChoice.getInt(scanner, " \uD83D\uDCDE Enter Mobile: ");
-
-        // Convert the int to a String for storage
+        // Use utility to ensure mobile is a valid integer before proceeding
+        int mobile = GetUserChoice.getInt(scanner, " 📞 Enter Mobile: ");
         String combineContact = name + " (" + mobile + ")";
 
+        // Validation: Prevent empty names and duplicate entries
         if (name.isEmpty()) {
             System.out.println("Error: Name cannot be empty.");
         } else if (contactList.contains(combineContact)) {
@@ -54,6 +61,10 @@ public class AddContact {
         }
     }
 
+    /**
+     * Provides global access to the contact list for other classes (Search, Display, Update).
+     * @return The static list of contact strings.
+     */
     public static List<String> getContacts() {
         return contactList;
     }

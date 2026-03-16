@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Handles searching logic for contacts by name or mobile number.
+ * Integrates the deletion process via DeleteHelper if matches are found.
+ */
 public class SearchBy {
     private static Scanner scanner = new Scanner(System.in);
 
@@ -17,6 +21,10 @@ public class SearchBy {
         displayMenu(contacts);
     }
 
+    /**
+     * Manages the search interface, result filtering, and deletion routing.
+     * @param contacts The main list of contacts to search through.
+     */
     private static void displayMenu(List<String> contacts) {
         while (true) {
             // Check if list became empty during a deletion
@@ -31,13 +39,14 @@ public class SearchBy {
             System.out.println("0. ↩ Return to Main Menu");
 
             int searchType;
+            // Validate search type input
             while (true) {
                 searchType = GetUserChoice.getInt(scanner, "Choose search type: ");
                 if (searchType >= 0 && searchType <= 2) break;
                 System.out.println("Invalid input! Please select 1, 2 or 0.");
             }
 
-            if (searchType == 0) break;
+            if (searchType == 0) break; // User chose to return to Main Menu
 
             System.out.print("Enter search term: ");
             String searchInput = scanner.nextLine().trim().toLowerCase();
@@ -50,13 +59,17 @@ public class SearchBy {
                 String contactLower = contact.toLowerCase();
                 boolean isMatch = false;
 
+                // Logic for filtering by Name
                 if (searchType == 1) {
                     String namePart = contactLower.split(" \\(")[0];
                     if (namePart.contains(searchInput)) isMatch = true;
-                } else if (searchType == 2) {
+                }
+                // Logic for filtering by Mobile
+                else if (searchType == 2) {
                     if (contactLower.contains(searchInput)) isMatch = true;
                 }
 
+                //If match is found, add to temporary result list and display with serial number
                 if (isMatch) {
                     matches.add(contact);
                     System.out.println(matches.size() + ". " + contact);
@@ -75,6 +88,7 @@ public class SearchBy {
             System.out.print("Choice: ");
             String action = scanner.nextLine().trim().toLowerCase();
 
+            // Route to DeleteHelper if the user wants to remove a specific result
             if (action.equals("d")) {
                 DeleteHelper.processDeletion(contacts,matches);
             }

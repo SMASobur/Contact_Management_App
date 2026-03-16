@@ -2,6 +2,11 @@ package se.lexicon;
 
 import java.util.Scanner;
 
+/**
+ * Handles the display of the application's primary navigation menu.
+ * Uses a Scanner instance passed from the Main class for consistency.
+ */
+
 class MenuHandler {
     private Scanner scanner;
 
@@ -9,6 +14,7 @@ class MenuHandler {
         this.scanner = scanner;
     }
 
+    //Prints the interactive main menu options to the console.
     public void displayMainMenu() {
         System.out.println("\n=== Main Menu ===");
         System.out.println("1. \uD83D\uDC64 Add Contact");
