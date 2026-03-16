@@ -20,6 +20,7 @@ public class Main {
      * Standard Java main method to launch the application.
      */
     public static void main(String[] args) {
+        FileHandler.importOnStartup(AddContact.getContacts());
         System.out.println("---- Contact Management App ----");
 
         int choice;
@@ -40,6 +41,9 @@ public class Main {
                     break;
                 case 4:
                     updateContact.run(); // Edit existing contacts
+                    break;
+                case 5:
+                    FileHandler.exportToText(AddContact.getContacts());
                     break;
                 case 0:
                     System.out.println("...*ੈ✩༺ Goodbye ༻*ੈ✩...");
